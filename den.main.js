@@ -3,10 +3,12 @@
             document.querySelector( 'input' ).value = _d
     }
 
+var view = document.querySelector('input')
+
 function append( _d )  {
-   if ( input === "0" ){
-   return;
-   }else{ 
+    if(view === "0"||"*"||"/"||"."){
+       return;
+    }else{
     document.querySelector( 'input' ).value += _d
     }}
     
@@ -17,3 +19,4 @@ function append( _d )  {
         update( f().toString() )
     }
     
+  
