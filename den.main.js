@@ -1,22 +1,37 @@
- function update( _d ) 
-    {
-            document.querySelector( 'input' ).value = _d
-    }
-
-var view = document.querySelector('input')
+let num = "";
+let key = "";
+let sliceEnd = num.substr( -1,1)
 
 function append( _d )  {
-    if(view === "0"||"*"||"/"||"."){
-       return;
+  if(key == "+"||key == "-"||key =="*"||key=="/"||key=="."){
+       if(num == "+"||num =="*"||num =="-"||num=="/"||num=="."){
+         num = ""+_d;
+          }else if(sliceEnd == "+"||sliceEnd == "-"||sliceEnd == "*"||sliceEnd == "/"||sliceEnd == "."){
+          num = num.substr(0,num.length -1)
+          num += "" + _d;
+          }else{
+             num += ""+_d;
+          }
+    }else if(key  == "0" || key == "00"){
+          if(num == "0"|| num == "00"){
+            num = ""+_d;
+          }else{
+            num += ""+_d;
+          }  
     }else{
-    document.querySelector( 'input' ).value += _d
-    }}
-    
-    function calc() 
-    {
-        const v = document.querySelector( 'input' ).value
-        const f = new Function( 'return ' + v )
-        update( f().toString() )
+       num += ""+_d;
+    }
+    document.querySelector( 'input' ).value = num
+    key = _d
+    }
+
+    function calc() {
+        num=eval(num)
+        num=String(num)
+        document.querySelector( 'input' ).value = num
     }
     
-  
+   function update()  {
+           document.rstBtn.reset() ;
+    }
+    

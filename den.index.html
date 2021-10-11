@@ -7,7 +7,7 @@
         <title>電卓</title>
       </head>
       <body>
-   
+  
   <input id="viewArea">
   
     <div>
@@ -26,7 +26,7 @@
       <button onclick="append( '1' )" >1</button>
       <button onclick="append( '2' )" >2</button>
       <button onclick="append( '3' )" >3</button>
-      <button onclick="append( '*' )" >*</button>
+      <button onclick="append( '*' )"  >*</button>
    </div>
    <div>
       <button onclick="append( '0' )" >0</button>
@@ -35,9 +35,12 @@
       <button onclick="append( '/' )" >/</button>
     </div>
       <div class="button-big">
-      <button onclick="update( '' )" >AC</button>
+        <form name="rstBtn">
+      <button onclick="update()" >AC</button>
+       </form>
       <button onclick="calc()" >=</button>
     </div>
+  
     
     <script type="text/javascript" src="den.main.js"></script>
       
