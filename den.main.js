@@ -1,12 +1,11 @@
 let num = "";
 let key = "";
-let sliceEnd = num.substr( -1,1)
+let sliceEnd = ""
 
 function append( _d )  {
   if(key == "+"||key == "-"||key =="*"||key=="/"||key=="."){
-       if(num == "+"||num =="*"||num =="-"||num=="/"||num=="."){
-         num = ""+_d;
-          }else if(sliceEnd == "+"||sliceEnd == "-"||sliceEnd == "*"||sliceEnd == "/"||sliceEnd == "."){
+        if(sliceEnd == "+"||sliceEnd == "-"||sliceEnd == "*"||sliceEnd == "/"||sliceEnd == "."){
+        
           num = num.substr(0,num.length -1)
           num += "" + _d;
           }else{
@@ -23,6 +22,7 @@ function append( _d )  {
     }
     document.querySelector( 'input' ).value = num
     key = _d
+     sliceEnd = num.substr( -1,1)
     }
 
     function calc() {
