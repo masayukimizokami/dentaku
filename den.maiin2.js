@@ -7,7 +7,7 @@ let keyP = ""
 let keyPlus =""
 
 function append( _d )  {
-  if(sliceEnd == "0"||sliceEnd == "00"){
+  if(num == "0"||num == "00"){
      num = ""+_d
   }else{
      num += ""+_d
